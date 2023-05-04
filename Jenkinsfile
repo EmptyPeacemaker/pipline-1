@@ -5,8 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 checkout scm
-                def customImage = docker.build("pipeline-test:${env.BUILD_ID}")
-                customImage.push('latest')
+//                 def customImage = docker.build("pipeline-test:${env.BUILD_ID}")
+//                 customImage.push('latest')
             }
         }
         stage('Test') {
@@ -21,7 +21,4 @@ pipeline {
             }
         }
     }
-}
-node {
-    checkout scm
 }
