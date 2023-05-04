@@ -1,4 +1,5 @@
 node {
     checkout scm
-    /* .. snip .. */
+    def customImage = docker.build("pipeline-test:${env.BUILD_ID}")
+
 }
